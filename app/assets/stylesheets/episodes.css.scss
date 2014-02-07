@@ -1,0 +1,43 @@
+// Place all the styles related to the episodes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*Only applies to episodes page*/
+
+$basewidth: 400px;
+$maincolor: #6f6;
+$mainfont: Helvetica;
+
+
+.main {
+	background-color: white;
+	/*SASS opertaor: 960 = the normal screen width to adjust to 600 px*/
+	width: $basewidth /960px * 100%; 
+	margin: 0 auto;
+	
+	/*Nesting*/
+	h1 {
+	text-align: center;
+	font-family: $mainfont;
+	padding-top: 35px;
+	}
+
+	/*global class within .main using inheritance*/
+	.box {
+		padding: 5px;
+	}
+
+	.episode {
+		background-color: darken($maincolor, 30%);
+		border-top: 3px solid darken($maincolor, 60%);
+		margin: 15px 0px 0px;
+		@extend .box;
+	}
+
+	.details {
+		background-color: $maincolor;
+		border-bottom: 3px solid darken($maincolor, 60%);
+		@extend .box;
+	}
+
+}
